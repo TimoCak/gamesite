@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1>{{company}}</h1>
-    <button @click="counting">count is {{count}}</button>
-    <button @click="count=0">reset</button>
+    <h2>{{dances}}</h2>
+    <button id="count" type="button" class="btn btn-dark" @click="counting">count is {{count}}</button>
+    <button id="reset" type="button" class="btn btn-dark" @click="count=0">reset</button>
   </div>
 </template>
 
@@ -11,15 +12,22 @@ export default {
   name: 'ImpressumSite',
   data() {
     return  {
-      company: "GAMERDUDES",
-      count: 0
+      company: "GAMING SITE",
+      count: 0,
+      dance: 'false'
     }
   },
   methods: {
     counting() {
       this.count++;
     }
-  }
+  },
+    computed: {
+      dances() {
+        return this.count === 7 ? 'YES' : 'NO';
+      }
+    }
+
 }
 </script>
 
@@ -29,6 +37,10 @@ export default {
     background-color: #2c3e50;
     width: 50%;
     margin: auto;
+  }
+
+  #count {
+    margin: 20px;
   }
 
 </style>
