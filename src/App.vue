@@ -1,15 +1,17 @@
 <template>
+  <HeaderVue />
   <router-view />
 </template>
 
 <script>
 
-
+import HeaderVue from "@/components/Header";
 
 export default {
   name: 'App',
   components: {
     //HelloWorld
+    HeaderVue
 
   }
 }
