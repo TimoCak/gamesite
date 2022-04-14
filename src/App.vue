@@ -1,15 +1,17 @@
 <template>
+  <HeaderVue />
   <router-view />
 </template>
 
 <script>
 
-
+import HeaderVue from "@/components/Header";
 
 export default {
   name: 'App',
   components: {
     //HelloWorld
+    HeaderVue
 
   }
 }
@@ -22,6 +24,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
