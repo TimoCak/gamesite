@@ -11,7 +11,7 @@ export default {
   name: "HomeSite",
   data() {
     return {
-      title: "Gamesite",
+      title: "Gamejunkie",
 
 
     }
