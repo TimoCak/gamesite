@@ -7,11 +7,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <router-link to="\Impressum">Impressum</router-link>
-          </li>
-          <li class="nav-item">
-
+          <li class="nav-item nav-link">
+            <router-link to="/Impressum">Impressum</router-link>
           </li>
           <li class="nav-item dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,5 +50,14 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+  color: red;
+  text-decoration: none;
+}
+ a:hover {
+  color: blueviolet
+  
+}
 
 </style>
