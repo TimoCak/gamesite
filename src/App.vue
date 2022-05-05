@@ -1,17 +1,20 @@
 <template>
   <HeaderVue />
   <router-view />
+  <FooterVue />
 </template>
 
 <script>
 
 import HeaderVue from "@/components/Header";
+import FooterVue from "@/components/Footer";
 
 export default {
   name: 'App',
   components: {
     //HelloWorld
-    HeaderVue
+    HeaderVue,
+    FooterVue
 
   }
 }
