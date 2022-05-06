@@ -15,8 +15,9 @@ export default {
 
 
 <style scoped>
-template {
-    margin-top: 50%;
+#footer {
+    background-color: grey;
+    margin-top: 100%
 }
 
 
