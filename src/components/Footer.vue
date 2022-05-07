@@ -1,8 +1,11 @@
 <template>
     <div id="footer">
-        <ul>
-            <li><router-link to="/Impressum">Impressum</router-link></li>
-        </ul>
+        <footer class="fixed-bottom text-center text-ls-start bg-light text-muted ">
+            <address>
+                This free website is provided by <a href="Me.php">Timo Caktu</a>
+            </address>
+</footer>
+
     </div>    
 </template>
 
@@ -15,10 +18,7 @@ export default {
 
 
 <style scoped>
-#footer {
-    background-color: grey;
-    margin-top: 100%
-}
+
 
 
 </style>
