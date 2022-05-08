@@ -1,3 +1,6 @@
+--database: gaming:
+CREATE DATABASE gaming;
+
 --users table:
 CREATE TABLE users (
     userID int NOT NULL AUTO_INCREMENT,
