@@ -52,7 +52,7 @@ export default {
     #checkboxLabel {
         margin-left: 2em;
     }
-    @media screen and (max-width:500px) {
+    @media screen and (max-width:600px) {
       form {
         width: 80%;
       }
