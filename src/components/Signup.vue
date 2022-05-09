@@ -20,7 +20,7 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label id="checkboxLabel" class="form-check-label">accept agreement!</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-success">Submit</button>
 </form>
     
 </template>
@@ -34,7 +34,16 @@ export default {
 <style scoped>
     form {
         width: 40%;
-        margin: auto;      
+        margin: auto;
+        background-color: rgb(86, 8, 37);  
+        padding: 2em;
+        margin-top: 2em;
+        border: 2px;
+        border-style: dotted;
+        border-color: blueviolet;
+        border-radius: 2em;   
+        -moz-border-radius: 2em;
+        color: bisque;
     }
     .form-check {
         padding: 2em;
