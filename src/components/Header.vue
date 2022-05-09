@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid">
       <router-link to="/" class="navbar-brand">Gamejunkie</router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,26 +8,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item nav-link">
-            <router-link to="/Impressum">Impressum</router-link>
+            <router-link to="/communityhub">Community</router-link>
           </li>
-          <li class="nav-item dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+         </ul>
+          <ul style="right 100%; display: flex; list-style-type: none;">
+           <li style="margin-right: 2em;">
+              <router-link to="/login">login
+              <i class="bi bi-box-arrow-left"></i></router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <li>
+              <router-link to="/signup">signup 
+              <i class="bi bi-person-plus-fill"></i></router-link>
           </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="searcher">
-          <button @click="search()" class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+          </ul>  
       </div>
     </div>
   </nav>
@@ -56,8 +49,10 @@ a {
   text-decoration: none;
 }
  a:hover {
-  color: blueviolet
+  color: azure;
   
 }
-
+.navbar-custom {
+  background-color: #4B0082;
+}
 </style>

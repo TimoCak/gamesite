@@ -1,9 +1,7 @@
 <template>
  <div>
-   <h1>{{title}}</h1>
-   <router-link to="/Impressum">Impressum</router-link><br>
-   <router-link to="/">Home</router-link>
- </div>
+   <h1>Willkommen!</h1>
+  </div>
 </template>
 
 <script>
@@ -11,7 +9,7 @@ export default {
   name: "HomeSite",
   data() {
     return {
-      title: "Gamejunkie",
+      
 
 
     }
