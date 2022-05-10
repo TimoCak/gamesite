@@ -8,6 +8,7 @@
     <label>Password</label>
     <input type="password" class="form-control" id="exampleInputEmail1" placeholder="enter password">
   </div>
+  <button type="submit" name="submit" class="btn btn-danger">login</button>
   </form>   
 </template>
 
@@ -18,5 +19,26 @@ export default {
 </script>
 
 <style scoped>
-
+    form {
+        width: 40%;
+        margin: auto;
+        background-color: rgb(86, 8, 37);  
+        padding: 2em;
+        margin-top: 2em;
+        border: 2px;
+        border-style: dotted;
+        border-color: blueviolet;
+        border-radius: 2em;   
+        -moz-border-radius: 2em;
+        color: bisque;
+    }
+    .form-check {
+        padding: 2em;
+        display: flex;
+    }
+    @media screen and (max-width:600px) {
+      form {
+        width: 80%;
+      }
+    }
 </style>
