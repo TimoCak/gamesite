@@ -10,6 +10,12 @@ const saltRounds = 10;
 
 app.use(express.json())
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 /*
 *HTTP-Responses:
 */
@@ -19,7 +25,7 @@ app.get('/getUsers',function (req,res) {
     let sql = `SELECT * FROM users`;
     connection.query(sql, function(err, data, field){
         if (err) throw err;
-        res.json({
+         res.json({
             status: 200,
             data,
             message: "Users succesfully recieved!"

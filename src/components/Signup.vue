@@ -1,26 +1,23 @@
 <template>
-<form method="POST" action="/signup" >
+<button @click="getUsers()">test</button>
+<form>
   <div class="form-group">
     <label>Username</label>
-    <input name="username" type="text" class="form-control" id="exampleInputPassword1" placeholder="Username">
+    <input v-model="username" type="text" class="form-control" id="exampleInputPassword1" placeholder="Username">
   </div>  
   <div class="form-group">
     <label>Email address</label>
-    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input v-model="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
   </div>
   <div class="form-group">
     <label>Password</label>
-    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input v-model="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <div class="form-group">
     <label>Repeat Password</label>
-    <input name="repeatPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="repeat Password">
+    <input v-model="repeatPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="repeat Password">
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label id="checkboxLabel" class="form-check-label">accept agreement!</label>
-  </div>
-  <button @click="changeUrl" name="submit" type="submit" class="btn btn-success">Submit</button>
+  <button @click="signUp()" class="btn btn-success">Submit</button>
 </form>
     
 </template>
@@ -30,16 +27,36 @@
 /*
 idee: mit axios zu arbeiten mit forms funktioniert das nicht so gut!
 */
+import ApiServices from "../../ApiServices/axios.js";
 
 export default {
     name: 'SignupVue',
-
+    data() {
+      return {
+        username: '',
+        password: '',
+        email: '',
+        repeatPassword: ''
+      };
+    },
     methods: {
-      changeUrl() {
-       const url = "http://localhost:3000";
-      window.location.href = url;  
-    }
-     
+      async signUp() {
+        try {
+          const credentials = {
+          username: this.username,
+          password: this.password,
+          email: this.email 
+          };
+          await ApiServices.signUp(credentials);
+          this.$router.push('/login')
+       } catch(err) {
+         console.log(err);
+       }
+      },
+       getUsers() {
+         ApiServices.getUsers();
+        this.$router.push('/');
+      }   
     }
 }
 </script>
@@ -62,9 +79,7 @@ export default {
         padding: 2em;
         display: flex;
     }
-    #checkboxLabel {
-        margin-left: 2em;
-    }
+
     @media screen and (max-width:600px) {
       form {
         width: 80%;
