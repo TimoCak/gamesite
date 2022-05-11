@@ -65,12 +65,12 @@ export default {
     form {
         width: 40%;
         margin: auto;
-        background-color: rgb(86, 8, 37);  
+        background-color: #4B0082;  
         padding: 2em;
         margin-top: 2em;
         border: 2px;
         border-style: dotted;
-        border-color: blueviolet;
+        border-color: red;
         border-radius: 2em;   
         -moz-border-radius: 2em;
         color: bisque;
