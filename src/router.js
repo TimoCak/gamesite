@@ -3,6 +3,7 @@ import Impressum from "@/components/Impressum";
 import Home from "@/components/Home";
 import Signup from "@/components/Signup";
 import Login from "@/components/Login";
+import Store from "@/components/Store"
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
         path: '/login',
         name: "Login",
         component: Login
+    },
+    {
+        path: '/store',
+        name: "Store",
+        component: Store
     }
         
 
