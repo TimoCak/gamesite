@@ -8,13 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item nav-link">
-            <router-link to="/communityhub">Store</router-link>
+            <router-link to="/store">Store</router-link>
           </li>
           <li class="nav-item nav-link">
             <router-link to="/communityhub">Community</router-link>
           </li>
           <li class="nav-item nav-link">
-            <router-link to="/communityhub">News</router-link>
+            <router-link to="/news">News</router-link>
           </li>
          </ul>
           <ul style="right 100%; display: flex; list-style-type: none;">

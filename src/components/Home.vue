@@ -12,7 +12,7 @@
         <h4>{{game.title}}</h4>  
         <div>{{game.description}}</div>
         
-        <router-link to="/buy"><button class="btn btn-primary">BUY for <p>{{game.price}}</p></button></router-link>
+        <router-link :to="`/buy/${game.title}`"><button class="btn btn-primary">BUY for <p>{{game.price}}</p></button></router-link>
         </div>
         </div>
       </li>
@@ -20,18 +20,23 @@
       </div>    
     </ul>
    <h3>Bestseller</h3>
+      <bestseller :bestseller="bestsellerGames" />
    <h3>Angebote</h3>
 </template>
 
 <script>
 import games from "@/content/games.js"
+import bestseller from "@/components/Bestseller.vue"
+import bestsellerGames from "@/content/bestSeller"
 
 export default {
   name: "HomeSite",
+  components: {bestseller},
   data() {
     return {
      games: games,
      initialSlide: 0,
+     bestsellerGames: bestsellerGames
 
     }
   },
