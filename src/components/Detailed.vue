@@ -36,6 +36,7 @@
         border-color: black;
         margin: auto;
         border-radius: 20px;
+        margin-left: 1.2%;
     }
     .close {
         position: absolute;

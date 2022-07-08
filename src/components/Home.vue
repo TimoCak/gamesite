@@ -12,7 +12,7 @@
         <h4>{{game.title}}</h4>  
         <div>{{game.description}}</div>
         
-        <router-link :to="`/buy/${game.title}`"><button class="btn btn-primary">BUY for <p>{{game.price}}</p></button></router-link>
+        <router-link :to="`/buy/${game.title}`"><button class="btn btn-warning">BUY for <p>{{game.price}}</p></button></router-link>
         </div>
         </div>
       </li>
@@ -22,22 +22,29 @@
    <h3>Bestseller</h3>
       <bestseller :bestseller="bestsellerGames" />
    <h3>Angebote</h3>
+      <time-setting :time="adjustTime" :timeOn="timeOn"
+      @changeTime="(value) => adjustTime=value" 
+      @offSlides="() => timeOn = false"  @onSlides="() => timeOn = true"/>
+      <offer :time="adjustTime" :timeOn="timeOn"/>
 </template>
 
 <script>
 import games from "@/content/games.js"
 import bestseller from "@/components/Bestseller.vue"
+import offer from "@/components/Offer.vue"
 import bestsellerGames from "@/content/bestSeller"
+import timeSetting from "@/components/TimeSetting.vue"
 
 export default {
   name: "HomeSite",
-  components: {bestseller},
+  components: {bestseller,offer, timeSetting},
   data() {
     return {
      games: games,
      initialSlide: 0,
-     bestsellerGames: bestsellerGames
-
+     bestsellerGames: bestsellerGames,
+     adjustTime: 5000,
+     timeOn: true,
     }
   },
   created() {
