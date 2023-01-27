@@ -3,15 +3,17 @@ const app = express();
 const port = 3000;
 const connection = require('./db');
 const bcrypt = require('bcrypt');
-const { json } = require('body-parser');
+const bodyParser = require('body-parser');
 
 //how secure hashes thee password:
 const saltRounds = 10;
 
-app.use(express.json())
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+    res.header("Access-Control-Allow-Origin", "*"); //should set to http://localhost::8080 (frontend)
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
@@ -41,11 +43,11 @@ app.post('/signup',async function(req,res){
      try {   
         const hashedPassword = await bcrypt.hash(req.body.password,saltRounds)
         const sql = `INSERT INTO users (userUID, userEmail, userPassword) VALUES( "${req.body.username}", "${req.body.email}", "${hashedPassword}");`;
-        connection.query(sql, (err,result) => {
+        connection.query(sql, (err,data) => {
             if(err) throw err;
             res.json({
                 status: 201,
-                result,
+                data,
                 message: "registered successfully",
                 success: function() {
                     window.location.href = "http://localhost:8080"
@@ -55,9 +57,26 @@ app.post('/signup',async function(req,res){
         })
         
     } catch {
-        res.redirect('http://localhost:8080/signup')
+        res.status(500).send("sorry something went wrong!");
     }    
-})
+});
 
+app.post('/signin', async function (req, res) {
+    console.log(req.body);
+    
+        console.log("username:" + req.body.username + "\npassword: " + req.body.password);
+        const hashedPassword = await bcrypt.hash(req.body.password, saltRounds);
+        const sql = `SELECT userID FROM users WHERE userUID="${req.body.username}";`;
+        console.log(sql);
+        
+        connection.query(sql, function(err, data, field){
+            if (err) throw err;
+             res.json({
+                status: 200,
+                data,
+                message: "Users succesfully recieved!"
+            })
+        });
+});
 
 app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}`));
