@@ -15,11 +15,22 @@ function signUp(credentials) {
          console.log(err);
     });
 }
+
+function signIn(credentials) {
+    instance.post('/signin', credentials)
+    .then((res) => {
+        console.log(res);
+    })
+    .catch ((err) => {
+         console.log(err);
+    });
+}
+
 function getUsers() {
     return instance.get('/getUsers')
 }
 
-module.exports = {signUp , getUsers}
+module.exports = {signUp , signIn, getUsers}
 
 
     
