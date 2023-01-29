@@ -1,7 +1,9 @@
 <template>
+  <div id="page">
   <HeaderVue />
   <router-view />
   <FooterVue />
+</div>
 </template>
 
 <script>
@@ -27,11 +29,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  width: 100vw;
-  max-width: 1600px;
+  
+  background-color: black;
   margin: auto;
   background-color: black;
   min-height: 200vh;
   overflow-y: scroll;
+}
+
+#page {
+  max-width: 1600px;
+  margin: 0 auto 0 auto;
 }
 </style>
