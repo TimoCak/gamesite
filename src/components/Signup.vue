@@ -1,5 +1,4 @@
 <template>
-<button @click="getUsers()">test</button>
 <form>
   <div class="form-group">
     <label>Username</label>
